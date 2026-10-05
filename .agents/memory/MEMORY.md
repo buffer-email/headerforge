@@ -1,0 +1,1 @@
+- [HeaderForge product constraints](headerforge-product.md) — The user wants an installable Chromium MV3 extension with local-only rule and value storage.

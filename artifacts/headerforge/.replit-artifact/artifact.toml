@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "HeaderForge"
+description = "A privacy-first Chromium extension for managing request and response header rules in reusable profiles, with URL scoping, global and profile toggles, and portable JSON import/export."
+version = "1.0.0"
+id = "artifacts/headerforge"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19042
+
+[services.development]
+run = "pnpm --filter @workspace/headerforge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/headerforge", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/headerforge/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19042"
+BASE_PATH = "/"
