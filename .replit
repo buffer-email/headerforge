@@ -18,3 +18,37 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[[ports]]
+localPort = 5198
+externalPort = 3002
+exposeLocalhost = true
+
+[[ports]]
+localPort = 5199
+externalPort = 80
+exposeLocalhost = true
+
+[[ports]]
+localPort = 5200
+externalPort = 3000
+
+[[ports]]
+localPort = 8080
+externalPort = 4200
+
+[[ports]]
+localPort = 8081
+externalPort = 5000
+
+[[ports]]
+localPort = 9826
+externalPort = 3003
+exposeLocalhost = true
+
+[[ports]]
+localPort = 19042
+externalPort = 3001
+
+[nix]
+packages = ["vim"]
